@@ -1,4 +1,4 @@
-{{-- @include('Frondend.header') --}}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,122 +48,13 @@
     <!-- Preloader Start -->
     <div class="se-pre-con"></div>
     <!-- Preloader Ends -->
-
+    @include('Frondend.header')
     <!-- Start Header Top 
     ============================================= -->
-    <div class="top-bar-area">
-        <div class="container">
-            <div class="row">
-                @foreach($header as $data)
-            <div class="col-md-3 logo">
-                <a href="/">
-                    {{-- <img src="{{Storage::disk('uploads')->url($data->image)}}" alt="Logo" class="logo" > --}}
-                    <img src="{{asset('uploads/'.$data->image)}}"  alt="logo">
-                    {{-- <img src="assets/img/logo.png" class="logo" alt="Logo"> --}}
-                </a>
-            </div>
-            <div class="col-md-9 address-info text-right">
-                <div class="info box">
-                   
-                    <ul>
-                        <li>
-                            <div class="icon">
-                                <i class="flaticon-email"></i>
-                            </div>
-                            <div class="info">
-                                <span>Email</span> {{$data->email}}
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <i class="flaticon-call-center"></i>
-                            </div>
-                            <div class="info">
-                                <span>Phone</span> {{$data->phone}}
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <i class="flaticon-countdown"></i>
-                            </div>
-                            <div class="info">
-                                <span>Office Hours</span> Sat - Wed : 8:00 - 4:00
-                            </div> 
-                        </li>
-                    </ul>
-                    @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top -->
 
     <!-- Header 
     ============================================= -->
-    <header id="home">
-
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default attr-border active-border logo-less small-pad navbar-sticky bootsnav">
-
-            <!-- Start Top Search -->
-            <div class="top-search">
-                <div class="container">
-                    <form action="{{route('search')}}" method="GET">
-                        @csrf
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                        <input type="text" class="form-control" name="search" placeholder="Search">
-                        <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-                    </div>
-                </form>
-                </div>
-            </div>
-            <!-- End Top Search -->
-
-            <div class="container">
-
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
-                    </ul>
-                    <ul class="social">
-                        @foreach($header as $data)
-                        <li><a href="{{$data->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{$data->facebook}}"><i class="fab fa-twitter"></i></a></li>
-                        
-                        @endforeach
-                    </ul>
-                </div>        
-                <!-- End Atribute Navigation -->
-
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Logo">
-                    </a>
-                </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="dropdown">
-                            {!! getTopNavCat() !!}
-                           
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </nav>
-        <!-- End Navigation -->
-
-    </header>
-    <!-- End Header -->
-
+   
     
 
      <!-- Start Banner 

@@ -130,7 +130,19 @@
               <p>Footer Details</p>
             </a>
           </li>
-
+          <li class="nav-item dropdown @yield('transaction_select')">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Transaction
+            
+            <i class="now-ui-icons location_world"></i>
+             
+            </a>
+            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{{url('/picnic')}}">Picnic </a>
+              {{-- <a class="dropdown-item"  href="{{url('Transaction/Paid')}}">Paid Transaction</a> --}}
+            
+            </div>
+          </li>
          
 
           

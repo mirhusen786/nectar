@@ -1,7 +1,7 @@
 @extends('Super_Admin.layout')
-@section('page_title','Menu Record')
-@section('page_heading','Menu Record')
-@section('menu_select','active')
+@section('page_title','Picnic Record')
+@section('page_heading','Picnic Record')
+@section('picnic_select','active')
 @section('container')
 <!DOCTYPE html>
 <html>
@@ -43,8 +43,8 @@
                      <div class="mbsc-row">
                         <div class="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
                            <label>
-                            Menu Name
-                           <input type="text" mbsc-input data-input-style="box" value="{{$menu->menu_name}}" name="menu_name" data-label-style="floating" placeholder="image" required>
+                            Imagae
+                           <input type="file" mbsc-input data-input-style="box" value="{{$picnic->image}}" name="image" data-label-style="floating" placeholder="image">
                          
                         </label>
                         {{-- <div>
@@ -56,30 +56,16 @@
                         </div>
                         <div class="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
                            <label>
-                               <select data-input-style="box" name="parent_menu">
-                                   <option value="" selected hidden>Select Parent menu</option>
-                                   @foreach($menus as $data)
-                                  
-                                   {{-- <option value="{{$data->menu_name}}" selected>{{$data->menu_name}}</option> --}}
-                                   <option style="text-align:center" value="{{$data->id}}" {{ $menu->parent_menu == $data->id ? 'selected' : '' }}>{{$data->menu_name}}</option>
-                                   {{-- @else
-                                   <option value="" >{{$data->menu_name}}</option> --}}
-                               
-                                    @endforeach
-                               </select>
-                           </label>
-                       </div>
-
-                        <div class="mbsc-col-12 mbsc-col-md-6 mbsc-col-lg-3">
-                           <label>
-                           Slug
-                           <input type="text" mbsc-input data-input-style="box" value="{{$menu->slug}}" name="slug" data-label-style="floating" placeholder="phone" required>
+                            Description
+                           <input type="text" mbsc-input data-input-style="box" value="{{$picnic->desc}}" name="desc" data-label-style="floating" placeholder="descrition" >
                          
                         </label>
                         
                         </div>
 
+                        
 
+                        
                      
                      </div>
                     

@@ -16,9 +16,14 @@ use App\Http\Controllers\Super_Admin\AuthController;
 use App\Http\Controllers\Super_Admin\IdeaController;
 use App\Http\Controllers\Super_Admin\MenuController;
 use App\Http\Controllers\Super_Admin\FooterController;
+use App\Http\Controllers\Super_Admin\PicnicController;
+
+
 //.......................Frontend Controller..................
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/search/',[FrontendController::class,'search'])->name('search');
+
+Route::get('Gallery/picnic',[FrontendController::class,'picnic']);
 
 //.......................auth route for all Role..................
 
@@ -158,6 +163,16 @@ Route::get('footer/Delete/{id}', [FooterController::class, 'delete'])->name('foo
 Route::get('footer/Edit/{id}', [FooterController::class, 'edit'])->name('footer.Edit');
 Route::post('footer/update/{id}', [FooterController::class, 'update'])->name('footer.update');
 Route::get('footer/status/{status}/{id}', [FooterController::class, 'status']);
+
+// ....................Picnic Route.....................................
+
+Route::get('picnic', [PicnicController::class, 'index']);
+Route::get('picnic/form', [PicnicController::class, 'form'])->name('picnic.form');
+Route::POST('picnic/Insert', [PicnicController::class, 'store'])->name('picnic.Insert');
+Route::get('picnic/Delete/{id}', [PicnicController::class, 'delete'])->name('picnic.Delete');
+Route::get('picnic/Edit/{id}', [PicnicController::class, 'edit'])->name('picnic.Edit');
+Route::post('picnic/update/{id}', [PicnicController::class, 'update'])->name('picnic.update');
+Route::get('picnic/status/{status}/{id}', [PicnicController::class, 'status']);
 
 });
 
